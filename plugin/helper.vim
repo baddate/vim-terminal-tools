@@ -14,7 +14,7 @@ let s:buffer_name = "term"
 let s:shell = $SHELL
 let g:terminal_open = 0
 
-function TerminalToggle()
+function TermToggle()
     if g:terminal_open == 0
         call TermOpen()
     else
@@ -90,9 +90,9 @@ if get(g:, 'terminal_default_mapping', 1)
     endif
 
     let s:cmd = 'nnoremap <silent>'.(g:terminal_key). ' '
-    exec s:cmd . ':call TerminalToggle()<cr>'
+    exec s:cmd . ':call TermToggle()<cr>'
 
     let s:cmd = 'tnoremap <silent>'.(g:terminal_key). ' '
-    exec s:cmd . '<c-\><c-n>:call TerminalToggle()<cr>'
-    endif
+    exec s:cmd . '<c-\><c-n>:call TermToggle()<cr>'
 endif
+
