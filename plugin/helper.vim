@@ -17,8 +17,10 @@ let g:terminal_open = 0
 function TermToggle()
     if g:terminal_open == 0
         call TermOpen()
+        let g:terminal_open == 1
     else
         call TermClose()
+        let g:terminal_open == 0
     endif
 endfunction
 
